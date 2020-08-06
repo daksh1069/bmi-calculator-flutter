@@ -9,9 +9,10 @@ class BMICalculator extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark().copyWith(
         primaryColor: Color(0xFF0A0E21),
-        scaffoldBackgroundColor: Color(0xFF282B4D),
+        scaffoldBackgroundColor: Color(0xFF0A0E21),
       ),
       home: InputPage(),
     );
   }
 }
+//0xFF282B4D
