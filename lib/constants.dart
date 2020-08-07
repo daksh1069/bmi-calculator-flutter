@@ -6,6 +6,8 @@ const kinActiveCardColor = Color(0xFF111328);
 const kBottomContainerColor = Color(0xFFEB1555);
 
 const ktext_style = TextStyle(
-  fontSize: 18.0,
+  fontSize: 20.0,
   color: Color(0xFF8D8E98),
 );
+
+const kNumberStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.w900);
