@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'icon_content.dart';
 import 'reuseable_card.dart';
-
-const BottomContainerHeight = 80.0;
-const ActiveCardColor = Color(0xFF1D1E33);
-const inActiveCardColor = Color(0xFF111328);
-const BottomContainerColor = Color(0xFFEB1555);
+import 'constants.dart';
 
 enum GenderType { Male, Female }
 
@@ -17,10 +13,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColour = inActiveCardColor;
-  Color femaleCardColour = inActiveCardColor;
-  bool maleCardSelected = false;
-  bool femaleCardSelected = false;
+  GenderType selectedGender;
 
   bool enabled = false;
   @override
@@ -35,42 +28,34 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('Male Card was Pressed');
+                  child: ReusedCard(
+                    onPress: () {
                       setState(() {
-                        maleCardSelected = true;
-                        femaleCardSelected = false;
+                        selectedGender = GenderType.Male;
                       });
                     },
-                    child: ReusedCard(
-                      colour: maleCardSelected
-                          ? maleCardColour = ActiveCardColor
-                          : maleCardColour = inActiveCardColor,
-                      cardChild: GenderIcon(
-                        genderIcon: FontAwesomeIcons.mars,
-                        label: 'MALE',
-                      ),
+                    colour: selectedGender == GenderType.Male
+                        ? kActiveCardColor
+                        : kinActiveCardColor,
+                    cardChild: GenderIcon(
+                      genderIcon: FontAwesomeIcons.mars,
+                      label: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      print('Female Card was pressed');
+                  child: ReusedCard(
+                    onPress: () {
                       setState(() {
-                        femaleCardSelected = true;
-                        maleCardSelected = false;
+                        selectedGender = GenderType.Female;
                       });
                     },
-                    child: ReusedCard(
-                      colour: femaleCardSelected
-                          ? femaleCardColour = ActiveCardColor
-                          : femaleCardColour = inActiveCardColor,
-                      cardChild: GenderIcon(
-                        genderIcon: FontAwesomeIcons.venus,
-                        label: 'FEMALE',
-                      ),
+                    colour: selectedGender == GenderType.Female
+                        ? kActiveCardColor
+                        : kinActiveCardColor,
+                    cardChild: GenderIcon(
+                      genderIcon: FontAwesomeIcons.venus,
+                      label: 'FEMALE',
                     ),
                   ),
                 ),
@@ -79,7 +64,7 @@ class _InputPageState extends State<InputPage> {
           ),
           Expanded(
             child: ReusedCard(
-              colour: ActiveCardColor,
+              colour: kActiveCardColor,
             ),
           ),
           Expanded(
@@ -87,22 +72,22 @@ class _InputPageState extends State<InputPage> {
               children: [
                 Expanded(
                   child: ReusedCard(
-                    colour: ActiveCardColor,
+                    colour: kActiveCardColor,
                   ),
                 ),
                 Expanded(
                   child: ReusedCard(
-                    colour: ActiveCardColor,
+                    colour: kActiveCardColor,
                   ),
                 ),
               ],
             ),
           ),
           Container(
-            color: BottomContainerColor,
+            color: kBottomContainerColor,
             margin: EdgeInsets.only(top: 10.0),
             width: double.infinity,
-            height: BottomContainerHeight,
+            height: kBottomContainerHeight,
           ),
         ],
       ),
