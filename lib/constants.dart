@@ -11,3 +11,15 @@ const ktext_style = TextStyle(
 );
 
 const kNumberStyle = TextStyle(fontSize: 50, fontWeight: FontWeight.w900);
+
+const kLargerNumberTextStyle =
+    TextStyle(fontSize: 65, fontWeight: FontWeight.w900);
+
+const kLargeButtonTextStyle =
+    TextStyle(fontSize: 30, fontWeight: FontWeight.w900);
+const kLargerButtonTextStyle =
+    TextStyle(fontSize: 45, fontWeight: FontWeight.w900);
+const kStatusTextStyle =
+    TextStyle(fontSize: 40, fontWeight: FontWeight.w800, color: Colors.green);
+
+const kResultTextStyle = TextStyle(fontSize: 22, fontWeight: FontWeight.w800);
