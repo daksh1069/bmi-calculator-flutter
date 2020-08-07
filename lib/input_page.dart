@@ -22,11 +22,11 @@ class _InputPageState extends State<InputPage> {
     if (gender == 1) {
       {
         if (maleCardColour == inActiveCardColor) {
-          print('Colour should be updated male');
+          print('Colour should activate male');
           maleCardColour = ActiveCardColor;
           femaleCardColour = inActiveCardColor;
         } else {
-          print('Colour should be un-updated male');
+          print('Colour should deactivate male');
           maleCardColour = inActiveCardColor;
         }
       }
@@ -35,14 +35,15 @@ class _InputPageState extends State<InputPage> {
       if (femaleCardColour == inActiveCardColor) {
         femaleCardColour = ActiveCardColor;
         maleCardColour = inActiveCardColor;
-        print('Colour should be updated female');
+        print('Colour should activate female');
       } else {
         femaleCardColour = inActiveCardColor;
-        print('Colour should be un-updated female');
+        print('Colour should  deactivate female');
       }
     }
   }
 
+  bool enabled = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,7 +64,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: ReusedCard(
-                      colour: inActiveCardColor,
+                      colour: maleCardColour,
                       cardChild: GenderIcon(
                         genderIcon: FontAwesomeIcons.mars,
                         label: 'MALE',
@@ -80,7 +81,7 @@ class _InputPageState extends State<InputPage> {
                       });
                     },
                     child: ReusedCard(
-                      colour: inActiveCardColor,
+                      colour: femaleCardColour,
                       cardChild: GenderIcon(
                         genderIcon: FontAwesomeIcons.venus,
                         label: 'FEMALE',
