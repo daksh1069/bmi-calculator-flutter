@@ -1,6 +1,6 @@
-import 'package:bmi_calculator/constants.dart';
+import 'package:bmi_calculator/component/constants.dart';
 import 'package:flutter/material.dart';
-import 'reuseable_card.dart';
+import '../component/reuseable_card.dart';
 
 class ResultPage extends StatelessWidget {
   String Status = 'Normal';

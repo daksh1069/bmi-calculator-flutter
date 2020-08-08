@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_content.dart';
-import 'reuseable_card.dart';
-import 'constants.dart';
+import '../component/icon_content.dart';
+import '../component/reuseable_card.dart';
+import '../component/constants.dart';
 
 enum GenderType { Male, Female }
 
